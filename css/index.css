@@ -1,0 +1,37 @@
+:root{
+    --main-dark-color: #101214;
+    --secondary-dark-color: #161a1d;
+    --tertiary-dark-color: #333;
+
+
+}
+body{
+    font-family: "Lora", serif;
+}
+form .form-control,form .form-control ~label{
+    font-family: var(--bs-font-sans-serif);
+}
+form .form-control:focus{
+    box-shadow: none;
+    border: 1px solid  var(--bs-border-color);
+}
+.form-floating>textarea.form-control{
+    min-height: 100px;
+    max-height: 200px;
+}
+.product-card{
+    background-color: var(--secondary-dark-color);
+}
+.product-card img{
+    height: 200px;
+    object-fit: contain;
+    background-color: aliceblue;
+}
+.error{
+    color: red;
+    margin-top: 10px;
+    font-family: var(--bs-font-sans-serif);
+}
+.error::before{
+    content: '*';
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- font awesome -->
+  <link rel="stylesheet" href="./css/all.min.css">
+
+  <!-- lora font -->
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+  <!--  css bootstrap -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <!-- css -->
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+  
+  <title>CRUD</title>
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <h1 class="text-center h5 my-4">Product Management System</h1>
+      <!-- form -->
+      <form >
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="productNameInput" placeholder="type product name" oninput="validate(nameRegex,productNameInput)">
+          <label for="productNameInput" id="label">Name</label>
+          <p class="error d-none">Name must Start with capital letter followed by 3 letters or more</p>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="productCategoryInput" placeholder="type product Category" oninput="validate(categoryRegex,productCategoryInput)">
+          <label for="productCategoryInput">Category</label>
+          <p class="error d-none">Category must Start with capital letter followed by 3 letters or more</p>
+
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="productPriceInput" placeholder="type product price" oninput="validate(priceRegex,productPriceInput)">
+          <label for="productPriceInput">Price</label>
+          <p class="error d-none">Price must be a number between 100 and 999 without decimals</p>
+
+        </div>
+        <div class="form-floating mb-3">
+          
+          <textarea class="form-control" id="productDescriptionInput" placeholder="type product description" oninput="validate(descRegex,productDescriptionInput)"></textarea>
+          <label for="productDescriptionInput">Description</label>
+          <p class="error d-none">Description must be 25–100 characters, using lowercase letters and spaces only</p>
+          
+        </div>
+        <div class="mb-3">
+          <label for="formFile" class="form-label">Choose Product Image</label>
+          <input class="form-control" type="file" id="productImageInput">
+        </div>
+        <button class="btn btn-primary" type="button" onclick="addProduct()" id="addbtn">Add Product</button>
+        <button class="btn btn-warning d-none" type="button" onclick=" updateProduct()" id="updatebtn">Update Product</button>
+
+        <div class="input-group my-3 mx-auto w-75 ">
+          <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+          <input type="text" id="searchInput" class="form-control" placeholder="Search Products Here...." oninput="searchProduct()" >
+        </div>
+      </form>
+
+      <!-- card -->
+       <div class="row g-4 pb-5" id="productsContainer">
+       
+        
+       </div>
+    </div>
+  </main>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+  <!-- js  -->
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
